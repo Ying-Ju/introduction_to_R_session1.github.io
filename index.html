@@ -887,10 +887,10 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 </ul>
 <p>Usage: data.frame(…, row.names = NULL, check.rows = FALSE, check.names = TRUE, fix.empty.names = TRUE, stringsAsFactors = FALSE)</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="#cb203-1"></a><span class="co"># Creating Data Frames</span></span>
-<span id="cb203-2"><a href="#cb203-2"></a>names =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;David&#39;</span>, <span class="st">&#39;John&#39;</span>, <span class="st">&#39;Mary&#39;</span>)</span>
-<span id="cb203-3"><a href="#cb203-3"></a>quiz<span class="fl">.1</span> =<span class="st"> </span><span class="kw">c</span>(<span class="dv">89</span>, <span class="dv">93</span>, <span class="dv">85</span>)</span>
-<span id="cb203-4"><a href="#cb203-4"></a>quiz<span class="fl">.2</span> =<span class="st"> </span><span class="kw">c</span>(<span class="dv">91</span>, <span class="dv">88</span>, <span class="dv">90</span>)</span>
-<span id="cb203-5"><a href="#cb203-5"></a>Grade =<span class="st"> </span><span class="kw">data.frame</span>(names, quiz<span class="fl">.1</span>, quiz<span class="fl">.2</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb203-2"><a href="#cb203-2"></a>names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;David&#39;</span>, <span class="st">&#39;John&#39;</span>, <span class="st">&#39;Mary&#39;</span>)</span>
+<span id="cb203-3"><a href="#cb203-3"></a>quiz<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">89</span>, <span class="dv">93</span>, <span class="dv">85</span>)</span>
+<span id="cb203-4"><a href="#cb203-4"></a>quiz<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">91</span>, <span class="dv">88</span>, <span class="dv">90</span>)</span>
+<span id="cb203-5"><a href="#cb203-5"></a>Grade &lt;-<span class="st"> </span><span class="kw">data.frame</span>(names, quiz<span class="fl">.1</span>, quiz<span class="fl">.2</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb203-6"><a href="#cb203-6"></a>Grade</span></code></pre></div>
 <pre><code>##   names quiz.1 quiz.2
 ## 1 David     89     91
@@ -942,7 +942,7 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 <li>by.x: the column used for merging in x</li>
 <li>by.y: the column used for merging in y</li>
 </ul>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="#cb225-1"></a>Grade1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">students =</span> <span class="kw">c</span>(<span class="st">&#39;David&#39;</span>, <span class="st">&#39;Gabby&#39;</span>, <span class="st">&#39;Mary&#39;</span>), </span>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="#cb225-1"></a>Grade1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">students =</span> <span class="kw">c</span>(<span class="st">&#39;David&#39;</span>, <span class="st">&#39;Gabby&#39;</span>, <span class="st">&#39;Mary&#39;</span>), </span>
 <span id="cb225-2"><a href="#cb225-2"></a>                    <span class="dt">quiz_3=</span><span class="kw">c</span>(<span class="dv">88</span>, <span class="dv">92</span>, <span class="dv">85</span>), </span>
 <span id="cb225-3"><a href="#cb225-3"></a>                    <span class="dt">stringsAsFactors=</span><span class="ot">TRUE</span>)</span>
 <span id="cb225-4"><a href="#cb225-4"></a>Grade1</span></code></pre></div>
@@ -1008,12 +1008,12 @@ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
 <p>Some Common arguments in these functions: - file: can be either a path to a file, a connection, or literal data - col_names: can be either TRUE, FALSE, or a character of column names</p>
 <p>In general, these functions will work well. We include the path to a file, and we will obtain a tibble which is a modern reimagining of the data frame. It is much easier to navigate, view, and manipulate the contents of data using a tibble as every row is corresponding to an observation and every column is corresponding with a variable.</p>
 <p>The following two code chunks give examples of reading data files.</p>
-<pre><code>## -- Attaching packages --------------------------------------------- tidyverse 1.3.0 --</code></pre>
-<pre><code>## v ggplot2 3.3.0     v purrr   0.3.4
+<pre><code>## -- Attaching packages ---------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.3.1     v purrr   0.3.4
 ## v tibble  3.0.1     v dplyr   1.0.0
 ## v tidyr   1.1.0     v stringr 1.4.0
 ## v readr   1.3.1     v forcats 0.5.0</code></pre>
-<pre><code>## -- Conflicts ------------------------------------------------ tidyverse_conflicts() --
+<pre><code>## -- Conflicts ------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1"></a>df1 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/bike_sharing_data.csv&quot;</span>)</span></code></pre></div>
